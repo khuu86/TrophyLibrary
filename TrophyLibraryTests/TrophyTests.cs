@@ -168,5 +168,23 @@ namespace TrophyLibrary.Tests
             // Act & Assert: Forventer ingen exceptions for gyldige værdier
             trophy4.Validate();
         }
+
+        // Tester constructors (Ved ikke om det er nødvendigt?)
+
+        /// <summary>
+        /// Tester om konstruktøren korrekt initialiserer værdierne.
+        /// </summary>
+        [TestMethod()]
+        public void TrophyConstructorTest()
+        {
+            // Arrange & Act: Opretter et trofæ objekt med gyldige værdier
+            Trophy trophy = new Trophy(13, "Champions League", 2024);
+
+            // Assert: Kontrollerer om værdierne blev initialiseret korrekt
+            Assert.AreEqual(13, trophy.Id);
+            Assert.AreEqual("Champions League", trophy.Competition);
+            Assert.AreEqual(2024, trophy.Year);
+        }
+
     }
 }
