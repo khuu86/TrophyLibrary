@@ -55,18 +55,18 @@ namespace TrophyLibrary.Tests
             Trophy trophy2 = new Trophy
             {
                 Id = 3,
-                Competition = "An", // Invalid name (too short
+                Competition = "US", // Invalid name (too short)
                 Year = 2022
             };
 
             // Act & Assert: Forventer ArgumentOutOfRangeException, da navnet er tomt
             Assert.ThrowsException<ArgumentOutOfRangeException>(() => trophy2.ValidateCompetition());
 
-            // Arrange: Opretter en competition med en gyldig værdi
+            // Arrange: Opretter en competition med en gyldig værdi (præcis 3 tegn)
             Trophy trophy3 = new Trophy
             {
                 Id = 4,
-                Competition = "Tour de France", // Valid name
+                Competition = "USA", // Valid name
                 Year = 2022
             };
         }
@@ -140,7 +140,7 @@ namespace TrophyLibrary.Tests
             Trophy trophy2 = new Trophy
             {
                 Id = 10,
-                Competition = "T", // Invalid name (too short)
+                Competition = "US", // Invalid name (too short)
                 Year = 2020
             };
             // Act & Assert: Forventer ArgumentOutOfRangeException pga. for kort navn
@@ -162,7 +162,7 @@ namespace TrophyLibrary.Tests
             Trophy trophy4 = new Trophy
             {
                 Id = 12,
-                Competition = "Vuelta Espana",
+                Competition = "USA",
                 Year = 2023 // Valid year
             };
             // Act & Assert: Forventer ingen exceptions for gyldige værdier
