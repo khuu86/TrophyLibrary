@@ -28,13 +28,13 @@ namespace TrophyLibrary
             List<Trophy> result = new List<Trophy>(_trophies);
 
             // Filtering på år
-            if (year != null)
-            {
-                return _trophies.FindAll(t => t.Year == year);
-            }
             if (name != null)
             {
                 return _trophies.FindAll(t => t.Competition == name);
+            }
+            if (year != null)
+            {
+                return _trophies.FindAll(t => t.Year == year);
             }
             if (sortBy != null)
             {
